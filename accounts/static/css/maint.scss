@@ -1,0 +1,123 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: poppins;
+}
+.flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.profile-update {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #612412;
+  .school-long {
+    width: 70%;
+    height: 70%;
+    @media (max-width: 990px) {
+      width: 100%;
+    }
+
+    .head {
+      flex-direction: column;
+      margin: 20px 0;
+      img {
+        width: 200px;
+      }
+      .hedtxt {
+        padding: 10px;
+        font-size: 2em;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+    .form-ctrl {
+      width: 100%;
+      .school {
+        .fields {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          @media (max-width: 768px) {
+            flex-direction: column;
+          }
+          .left {
+            width: 40%;
+            padding: 20px;
+            @media (max-width: 568px) {
+              width: 100%;
+            }
+            .imgbox {
+              .field {
+                label {
+                  color: white;
+                }
+                img {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .fiil {
+            width: 60%;
+            @media (max-width: 768px) {
+              width: 100%;
+            }
+            background-color: #612412;
+            padding: 20px;
+            img {
+              width: 300px;
+            }
+            .filflex {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 10px;
+              @media (max-width: 468px) {
+                grid-template-columns: repeat(1, 1fr);
+              }
+              .field {
+                width: 100%;
+
+                input {
+                  padding: 8px;
+                  // margin-right: 10px;
+                }
+                label {
+                  margin-top: 10px;
+                  color: white;
+                  font-weight: 300;
+                  text-transform: capitalize;
+                }
+              }
+            }
+            .field {
+              width: 100%;
+
+              input {
+                padding: 8px;
+                // margin-right: 10px;
+              }
+              label {
+                margin-top: 10px;
+                color: white;
+                font-weight: 300;
+                text-transform: capitalize;
+              }
+            }
+            button {
+              width: 100%;
+              margin: 10px 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

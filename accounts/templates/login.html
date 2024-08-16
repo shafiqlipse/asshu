@@ -1,0 +1,73 @@
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title%}{%endblock%} USSSA | login</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/main/main.css'%}"
+    />
+    <link rel="stylesheet" href="{% static 'css/css/all.min.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/main/login.css'%}" />
+  </head>
+  <body>
+    <div class="account">
+      <div class="flex-account">
+        <img src="{% static 'images/upsa.png'%}" class="logoz" alt="logo" />
+        <form method="POST" action="" class="form-ctrl">
+          {% csrf_token %}
+          <!---->
+
+          <div class="field">
+            <i class="fa fa-user"></i>
+            <input
+              type="text"
+              class="form-control"
+              name="username"
+              placeholder="Username"
+              required
+            />
+          </div>
+
+          <div class="field">
+            <i class="fa fa-lock"></i>
+            <input
+              type="password"
+              class="form-control"
+              name="password"
+              placeholder="Password"
+              id="Password"
+              required
+            />
+            <i class="fa fa-eye" id="eye" onclick="passview()"></i>
+          </div>
+
+          <button type="submit" class="btn-submit">Login</button>
+        </form>
+        <a href="/" class="home">Back to home</a
+        >
+        <br>
+        <a href="{% url 'password_reset' %}"><i>Forgot Password?</i></a>
+      </div>
+    </div>
+    <script>
+      const password = document.getElementById("Password");
+      const eye = document.querySelector("#eye");
+
+      const passview = () => {
+        if (password.type == "password") {
+          password.type = "text";
+          eye.classList.remove("fa-eye");
+          eye.classList.add("fa-eye-slash");
+        } else {
+          password.type = "password";
+          eye.classList.remove("fa-eye-slash");
+          eye.classList.add("fa-eye");
+        }
+      };
+    </script>
+  </body>
+</html>
