@@ -12,6 +12,7 @@ class TeacherForm(forms.ModelForm):
             "designation",
             "photo",
             "contact",
+            "region",
             "district",
             "gender",
             "school",
@@ -22,6 +23,7 @@ class TeacherForm(forms.ModelForm):
             "school": forms.TextInput(attrs={"class": "form-control"}),
             "contact": forms.TextInput(attrs={"class": "form-control"}),
             "designation": forms.Select(attrs={"class": "form-control"}),
+            "region": forms.Select(attrs={"class": "form-control"}),
             "district": forms.Select(attrs={"class": "form-control"}),
             "gender": forms.Select(attrs={"class": "form-control"}),
         }

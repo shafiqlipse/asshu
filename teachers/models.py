@@ -1,5 +1,5 @@
 from django.db import models
-from accounts.models import District
+from accounts.models import District,Region
 
 # Create your models here.
 
@@ -16,6 +16,13 @@ class Teacher(models.Model):
     district = models.ForeignKey(
         District,
         related_name="district",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
+    region = models.ForeignKey(
+        Region,
+        related_name="region",
         on_delete=models.CASCADE,
         null=True,
         blank=True,
