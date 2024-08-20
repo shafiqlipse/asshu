@@ -4,10 +4,12 @@ from django.urls import path, include
 from django.contrib import admin
 from django.urls import path
 from teachers.views import *
+from base.views import *
 
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     # venues
+    path("",home,name='home'),
     path("teachers/", include("teachers.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
