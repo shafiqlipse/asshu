@@ -8,12 +8,15 @@
 <div class="schools-den">
   <div class="head flex">
     <h1>{{teacher.first_name}} {{teacher.last_name}}</h1>
+    <hr />
   </div>
-  <div class="image-box flex">
+  <div class="imagebox">
     <img src="{{teacher.photo.url}}" alt="" />
     <div class="details">
+      <li>{{teacher.first_name}} {{teacher.last_name}}</li>
       <li>{{teacher.nin}}</li>
       <li>{{teacher.email}}</li>
+      <li>{{teacher.region}}</li>
       <li>{{teacher.district}}</li>
       <li>{{teacher.gender}}</li>
       <li>{{teacher.phone_number}}</li>
