@@ -14,7 +14,6 @@
   <div class="filter">
     <h2>Filter Teachers</h2>
     <form method="get" class="form-contol">
-      
       {{ filter.form.as_p }}
       <button type="submit">Apply Filter</button>
     </form>
@@ -31,7 +30,7 @@
             <th>Names</th>
             <th>School</th>
             <th>Designation</th>
-            <th>contact</th>
+            <th>Region</th>
 
             <th>District</th>
             <th>Delete</th>
@@ -47,7 +46,7 @@
             </td>
             <td>{{teacher.school}}</td>
             <td>{{teacher.designation}}</td>
-            <td>{{teacher.contact}}</td>
+            <td>{{teacher.region}}</td>
 
             <td>{{teacher.district}}</td>
             <td><a href="">delete</a></td>
