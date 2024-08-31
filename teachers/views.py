@@ -132,3 +132,11 @@ def teacher_details(request, id):
 
     context = {"teacher": teacher}
     return render(request, "teacher.html", context)
+
+def teacher_delete(request, id):
+    stud = Teacher.objects.get(id=id)
+    if request.method == "POST":
+        stud.delete()
+        return redirect("teachers")
+
+    return render(request, "delete_teacher.html", {"obj": stud})

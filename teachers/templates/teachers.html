@@ -49,7 +49,7 @@
             <td>{{teacher.region}}</td>
 
             <td>{{teacher.district}}</td>
-            <td><a href="">delete</a></td>
+            <td><a href="{%url 'delete_teacher' teacher.id %}">delete</a></td>
           </tr>
 
           {%endfor%}
