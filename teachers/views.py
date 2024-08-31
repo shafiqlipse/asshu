@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 
 from xhtml2pdf import pisa
 from django.template.loader import get_template
@@ -132,6 +132,28 @@ def teacher_details(request, id):
 
     context = {"teacher": teacher}
     return render(request, "teacher.html", context)
+
+
+def teacher_update(request, id):
+    teacher = get_object_or_404(Teacher, id=id)
+
+    if request.method == "POST":
+        form = TeacherForm(request.POST, request.FILES, instance=teacher)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Teacher information updated successfully!")
+            return redirect("teacher", id=teacher.id)
+        else:
+            messages.error(request, "Please correct the errors below.")
+    else:
+        form = TeacherForm(instance=teacher)
+
+    context = {
+        "form": form,
+        "teacher": teacher,
+    }
+    return render(request, "update_teacher.html", context)
+
 
 def teacher_delete(request, id):
     stud = Teacher.objects.get(id=id)

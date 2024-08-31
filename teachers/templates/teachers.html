@@ -31,8 +31,8 @@
             <th>School</th>
             <th>Designation</th>
             <th>Region</th>
-
             <th>District</th>
+            <th>Edit</th>
             <th>Delete</th>
           </tr>
         </thead>
@@ -49,6 +49,7 @@
             <td>{{teacher.region}}</td>
 
             <td>{{teacher.district}}</td>
+            <td><a href="{%url 'update_teacher' teacher.id %}">Edit</a></td>
             <td><a href="{%url 'delete_teacher' teacher.id %}">delete</a></td>
           </tr>
 
