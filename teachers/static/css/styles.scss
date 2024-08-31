@@ -1,0 +1,50 @@
+.schools-dew {
+  margin: 20px;
+
+  padding: 10px;
+  .head {
+    hr {
+      border: solid white 1px;
+      h2 {
+      }
+    }
+  }
+  h2 {
+    text-transform: uppercase;
+    margin: 10px 0;
+    font-size: 15px;
+  }
+  .filter {
+    padding: 20px;
+    box-shadow: 1px 1px 10px 1px #030000;
+    border-radius: 10px;
+    background-color: rgb(20, 20, 20);
+    @media (max-width: 1024px) {
+      flex-direction: column;
+    }
+    .form-contol {
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        display: flex;
+        flex-direction: column;
+        select {
+          padding: 10px;
+        }
+      }
+
+      button,
+      input {
+        padding: 10px;
+        background-color: #663600;
+        color: gold;
+        border: 0;
+        border-radius: 10px;
+        font-weight: bold;
+        text-transform: capitalize;
+      }
+    }
+  }
+}

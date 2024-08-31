@@ -19,12 +19,7 @@
       rel="stylesheet"
       href="{% static 'vendors/css/vendor.bundle.base.css'%}"
     />
-    <!-- endinject -->
-    <link
-      href="https://cdn.datatables.net/v/dt/dt-2.0.1/datatables.min.css"
-      rel="stylesheet"
-    />
-    <!-- Plugin css for this page -->
+
     <link
       rel="stylesheet"
       href="{% static 'vendors/jvectormap/jquery-jvectormap.css'%}"
@@ -49,10 +44,17 @@
     />
 
     <!-- End plugin css for this page -->
+    <!-- endinject -->
+    <link
+      href="https://cdn.datatables.net/v/dt/dt-2.0.1/datatables.min.css"
+      rel="stylesheet"
+    />
+    <!-- Plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}" />
     <!-- End layout styles -->
     <link rel="shortcut icon" href="{% static 'images/asshu.png" '%}"/>
   </head>
@@ -603,6 +605,7 @@
 
     <script src="{% static 'vendors/js/vendor.bundle.base.js'%}"></script>
     <!-- endinject -->
+    <script src="https://cdn.datatables.net/v/dt/dt-2.0.1/datatables.min.js"></script>
     <!-- Plugin js for this page -->
     <script src="{% static 'vendors/chart.js/Chart.min.js'%}"></script>
     <script src="{% static 'vendors/progressbar.js/progressbar.min.js'%}"></script>

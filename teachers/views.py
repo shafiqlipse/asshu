@@ -3,24 +3,10 @@ from django.shortcuts import render, redirect
 from xhtml2pdf import pisa
 from django.template.loader import get_template
 from django.http import HttpResponse
-from django.contrib.staticfiles import finders
-import base64
-import os
-from django.conf import settings
-from django.core.files.storage import default_storage
-from django.http import HttpResponse
-from django.template.loader import get_template
-from xhtml2pdf import pisa
-from django.http import JsonResponse
+
+
 from django.contrib import messages
-from django.shortcuts import render
-import base64
-import os
-from django.http import HttpResponse
-from django.template.loader import get_template
-from django.http import HttpResponse
-from django.template.loader import get_template
-from xhtml2pdf import pisa
+
 
 # from dashboard.filters import *
 from xhtml2pdf import pisa

@@ -1,1 +1,45 @@
-/*# sourceMappingURL=styles.css.map */
+.schools-dew {
+  margin: 20px;
+  padding: 10px;
+}
+.schools-dew .head hr {
+  border: solid white 1px;
+}
+.schools-dew h2 {
+  text-transform: uppercase;
+  margin: 10px 0;
+  font-size: 15px;
+}
+.schools-dew .filter {
+  padding: 20px;
+  box-shadow: 1px 1px 10px 1px #030000;
+  border-radius: 10px;
+  background-color: rgb(20, 20, 20);
+}
+@media (max-width: 1024px) {
+  .schools-dew .filter {
+    flex-direction: column;
+  }
+}
+.schools-dew .filter .form-contol {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.schools-dew .filter .form-contol p {
+  display: flex;
+  flex-direction: column;
+}
+.schools-dew .filter .form-contol p select {
+  padding: 10px;
+}
+.schools-dew .filter .form-contol button,
+.schools-dew .filter .form-contol input {
+  padding: 10px;
+  background-color: #663600;
+  color: gold;
+  border: 0;
+  border-radius: 10px;
+  font-weight: bold;
+  text-transform: capitalize;
+}/*# sourceMappingURL=styles.css.map */

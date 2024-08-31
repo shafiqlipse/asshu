@@ -9,20 +9,20 @@
 <div class="schools-dew">
   <div class="head flex">
     <h1>ASSHU</h1>
-    {% comment %} <a href="{% url 'teccred'%}" class="btn-submit">Accreditation</a> {% endcomment %}
+    <hr />
   </div>
-  <h2>Filter Teachers</h2>
-  <form method="get">
-    {{ filter.form.as_p }}
-    <button type="submit">Apply Filter</button>
-  </form>
-
- 
-
-  <form method="post">
-    {% csrf_token %}
-    <input type="submit" value="Generate PDF" />
-  </form>
+  <div class="filter">
+    <h2>Filter Teachers</h2>
+    <form method="get" class="form-contol">
+      
+      {{ filter.form.as_p }}
+      <button type="submit">Apply Filter</button>
+    </form>
+    <form method="post" class="form-contol">
+      {% csrf_token %}
+      <input type="submit" value="Generate PDF" />
+    </form>
+  </div>
   <div class="filterlist glue">
     <div class="official-list">
       <table id="myTable" class="display">
@@ -33,7 +33,7 @@
             <th>Designation</th>
             <th>contact</th>
 
-            <th>Gender</th>
+            <th>District</th>
             <th>Delete</th>
           </tr>
         </thead>
@@ -49,7 +49,7 @@
             <td>{{teacher.designation}}</td>
             <td>{{teacher.contact}}</td>
 
-            <td>{{teacher.gender}}</td>
+            <td>{{teacher.district}}</td>
             <td><a href="">delete</a></td>
           </tr>
 
