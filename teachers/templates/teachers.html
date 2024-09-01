@@ -21,6 +21,7 @@
       {% csrf_token %}
       <input type="submit" value="Generate PDF" />
     </form>
+    <a href="{% url 'export_csv' %}">Export CSV</a>
   </div>
   <div class="filterlist glue">
     <div class="official-list">

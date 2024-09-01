@@ -162,3 +162,47 @@ def teacher_delete(request, id):
         return redirect("teachers")
 
     return render(request, "delete_teacher.html", {"obj": stud})
+
+
+import csv
+from django.http import HttpResponse
+
+
+def export_csv(request):
+    # Create the HttpResponse object with the appropriate CSV header.
+    response = HttpResponse(content_type="text/csv")
+    response["Content-Disposition"] = 'attachment; filename="data.csv"'
+
+    # Create a CSV writer object using the HttpResponse as the file.
+    writer = csv.writer(response)
+
+    # Write the header row
+    writer.writerow(
+        [
+            "id",
+            "first_name",
+            "last_name",
+            "school",
+            "designation",
+            "contact",
+            "district",
+            "region",
+        ]
+    )  # Replace with your model's fields
+
+    # Write data rows
+    for obj in Teacher.objects.all():
+        writer.writerow(
+            [
+                obj.id,
+                obj.first_name,
+                obj.last_name,
+                obj.school,
+                obj.designation,
+                obj.contact,
+                obj.district,
+                obj.region,
+            ]
+        )  # Replace with your model's fields
+
+    return response
