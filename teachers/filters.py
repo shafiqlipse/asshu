@@ -3,7 +3,7 @@ from .models import Teacher
 
 
 class TeacherFilter(django_filters.FilterSet):
-
+    id_range = django_filters.RangeFilter(field_name='id')
     # Add more fields as needed
 
     class Meta:
@@ -11,5 +11,5 @@ class TeacherFilter(django_filters.FilterSet):
         fields = [
             "district",
             "designation",
-            "gender",
+            "gender","id_range",
         ]  # Add all fields you want to filter on
