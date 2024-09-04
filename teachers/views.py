@@ -101,8 +101,19 @@ def Teachers(request):
     filtered_teachers = teacher_filter.qs
 
     if request.method == "POST":
+        # Check which form was submitted
+        if "Accreditation" in request.POST:
+            template = get_template("acred.html")
+            filename = "Asshu_Accreditation.pdf"
+        elif "Certificate" in request.POST:
+            template = get_template(
+                "certificate_temaplate.html"
+            )  # Your certificate template
+            filename = "Filtered_Certificate.pdf"
+        else:
+            return HttpResponse("Invalid form submission")
+
         # Generate PDF
-        template = get_template("acred.html")
         context = {"teachers": filtered_teachers}
         html = template.render(context)
 
@@ -117,14 +128,13 @@ def Teachers(request):
 
         # Return the PDF as a response
         response = HttpResponse(content_type="application/pdf")
-        response["Content-Disposition"] = (
-            'attachment; filename="Filtered_Accreditation.pdf"'
-        )
+        response["Content-Disposition"] = f'attachment; filename="{filename}"'
         response.write(pdf_buffer.getvalue())
         return response
     else:
         # Render the filter form
         return render(request, "teachers.html", {"filter": teacher_filter})
+
 
 
 def teacher_details(request, id):

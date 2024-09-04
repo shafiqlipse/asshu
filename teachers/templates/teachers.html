@@ -19,7 +19,12 @@
     </form>
     <form method="post" class="form-contol">
       {% csrf_token %}
-      <input type="submit" value="Generate PDF" />
+      <input type="submit" name="Accreditation" value="Accreditation" />
+    </form>
+ 
+    <form method="post" class="form-contol">
+      {% csrf_token %}
+      <input type="submit" name="Certificate" value="Certificate" />
     </form>
     <a href="{% url 'export_csv' %}">Export CSV</a>
   </div>
