@@ -50,6 +50,19 @@
           <div class="school">
             <div class="fields">
               <div class="left">
+                {{ cform.non_field_errors }} {{ cform.errors }}
+                <!---->
+                {% if messages %}
+                <ul class="messages">
+                  {% for message in messages %}
+                  <li
+                    class="alert {% if message.tags %} alert-{{ message.tags }} {% endif %}"
+                  >
+                    {{ message }}
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
                 <div class="imgbox">
                   <div class="field">
                     <label>{{form.photo.label}}</label>
@@ -120,19 +133,7 @@
                 </div>
 
                 <button type="submit" class="btn btn-success">Submit</button>
-                {{ cform.non_field_errors }} {{ cform.errors }}
-                <!---->
-                {% if messages %}
-                <ul class="messages">
-                  {% for message in messages %}
-                  <li
-                    class="alert {% if message.tags %} alert-{{ message.tags }} {% endif %}"
-                  >
-                    {{ message }}
-                  </li>
-                  {% endfor %}
-                </ul>
-                {% endif %}
+                
               </div>
             </div>
           </div>
