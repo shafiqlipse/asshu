@@ -1,0 +1,26 @@
+# Django settings
+asshu/settings.py
+# usssa/urls.py
+# django.log
+
+# Django migrations
+accounts/migrations/*
+teachers/migrations/*
+base/migrations/*
+dashboard/migrations/*
+events/migrations/*
+articles/migrations/*
+# enrollment/migrations/*
+# transfers/migrations/*
+# zone/migrations/*
+
+
+# Media and uploaded files (one level up)
+photo/
+featured_images/
+# trainee_photo/
+# trainee_photos/
+# transfer_documents/
+# certificates/
+events/images/
+# qr_codes/

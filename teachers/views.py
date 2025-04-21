@@ -136,7 +136,6 @@ def Teachers(request):
         return render(request, "teachers.html", {"filter": teacher_filter})
 
 
-
 def teacher_details(request, id):
     teacher = Teacher.objects.get(id=id)
 

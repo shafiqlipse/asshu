@@ -1,0 +1,93 @@
+{% extends "dashboard/dashboard.html" %}
+
+<!--static-->
+{% block title %}Officials{% endblock %}
+<!--static-->
+{% load static %}
+<!--khfufufu-->
+{% block content %}
+<div class="page-content">
+  <div class="container-fluid">
+    <!-- start page title -->
+    <div class="row">
+      <div class="col-12">
+        <div
+          class="page-title-box d-sm-flex align-items-center justify-content-between"
+        >
+          <h4 class="mb-sm-0 font-size-18">{{article.title | upper}}</h4>
+
+          <div class="page-title-right">
+            <ol class="breadcrumb m-0">
+              <li class="breadcrumb-item">
+                <a href="javascript: void(0);">Contacts</a>
+              </li>
+              <li class="breadcrumb-item active">Profile</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xl-9 col-lg-8">
+        <div class="card">
+          <div class="card-body">
+            <img src="{{article.featured_image.url}}" alt="" width="100%" />
+            <div class="text-muted">{{ article.content|safe }}</div>
+          </div>
+        </div>
+      </div>
+      <!-- end card body -->
+      <div class="col-xl-3 col-lg-4">
+        <div class="card p-1 mb-sm-0">
+          <div class="p-3">
+            <div class="d-flex align-items-start">
+              <div class="flex-grow-1 overflow-hidden">
+                <h5 class="font-size-15 text-truncate">
+                  <a href="#" class="text-body">Project discussion with team</a>
+                </h5>
+                <p class="font-size-13 text-muted mb-0">20 Mar, 2020</p>
+              </div>
+              <div class="flex-shrink-0 ms-2">
+                <div class="dropdown">
+                  <a
+                    class="btn btn-link text-muted font-size-16 p-1 py-0 dropdown-toggle shadow-none"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <i class="bx bx-dots-horizontal-rounded"></i>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">Another action</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">Something else here</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="position-relative">
+            <img
+              src="assets/images/small/img-5.jpg"
+              alt=""
+              class="img-thumbnail"
+            />
+          </div>
+        </div>
+        <!-- end row -->
+      </div>
+    </div>
+    <!-- end card -->
+  </div>
+  <!-- end col -->
+
+  <!-- container-fluid -->
+</div>
+{% endblock %}
