@@ -17,6 +17,7 @@ urlpatterns = [
     path("auth/", include("accounts.urls")),
     path("dashboard/", include("dashboard.urls")),
     path("teachers/", include("teachers.urls")),
+    path("acp-convention/", include("acp.urls")),
     path("articles/", include("articles.urls")),
     path("events/", include("events.urls")),
     

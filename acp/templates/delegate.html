@@ -1,0 +1,30 @@
+{% extends "dashboard/dashboard.html" %}
+<!--static-->
+{% block title %}{{delegate.first_name}} {{delegate.last_name}}{% endblock %}
+<!--static-->
+{% load static %}
+<!--khfufufu-->
+{% block content %}
+<div class="schools-den">
+  <div class="head flex">
+    <h1>{{delegate.first_name}} {{delegate.last_name}}</h1>
+    <hr />
+  </div>
+  <div class="imagebox">
+    <img src="{{delegate.photo.url}}" alt="" />
+    <div class="details">
+      <li>{{delegate.first_name}} {{delegate.last_name}}</li>
+      <li>{{delegate.school}}</li>
+
+      <li>{{delegate.region}}</li>
+
+      <li>{{delegate.district}}</li>
+
+      <li>{{delegate.designation}}</li>
+
+      <li>{{delegate.contact}}</li>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

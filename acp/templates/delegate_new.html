@@ -1,0 +1,268 @@
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2025 ACP WORLD CONVENTION Uganda</title>
+    <link rel="icon" href="{%static 'images/asshu.png'%}" sizes="35x35" />
+    <link rel="stylesheet" href="{% static 'css/add-delegate.css' %}" />
+  </head>
+  <body>
+    <div class="acp-convention">
+      <div class="bg-long" style=" background-image: url('{% static "img/ug.jpg" %}');">
+        <div class="header-area">
+           <div class="logog">
+            <img src="{% static 'img/acp.png' %}" alt="" />
+            <img src="{% static 'images/fav.png' %}" alt="" /> 
+             <img src="{% static 'img/nssf.png' %}" alt="" />
+            <img src="{% static 'img/images.jpeg' %}" alt="" />
+          </div> 
+          <div class="header-text">
+            <h1>2025 ACP WORLD CONVENTION Uganda</h1>
+            <p>25 - 28 AUGUST 2025</p>
+          </div>
+       
+        </div>
+
+
+      </div>
+      <div class="acp-form">
+        <div class="max-form">
+          <form
+          action=""
+          method="POST"
+          class="form-ctrl"
+          enctype="multipart/form-data"
+        >
+          {% csrf_token %}
+
+          
+          <div class="form-header">
+            <h2>Delegate Registration</h2>
+            <p>Fields marked with <span>*</span> are mandatory</p>
+          </div>
+          <div class="form-body">
+            <div class="formset grid2">
+              <div class="form-group">
+                
+                <label for="name">I am registering to attend:<span>*</span></label>
+                {{form.registering_for}}
+              </div>
+              <div class="form-group">
+                
+                <label for="name">Are you an ICP Member? :<span>*</span></label>
+                {{form.is_icp_member}}
+              </div>
+            </div>
+            <div class="section-head">
+              <span>Delegate Personal Information</span>
+            </div>
+            <div class="formset grid3">
+              <div class="form-group">
+                
+                <label for="name">Title (Mr, Mrs, Dr, etc.):<span>*</span></label>
+                {{form.title}}
+              </div>
+              <div class="form-group">
+                
+                <label for="name">First Name :<span>*</span></label>
+                {{form.first_name}}
+              </div>
+              <div class="form-group">
+                
+                <label for="name">Surname :<span>*</span></label>
+                {{form.surname}}
+              </div>
+            </div>
+            <div class="formset grid2">
+              <div class="form-group">
+                <label for="name">Preferred first name for name badge:<span>*</span></label>
+                {{form.badge_name}}
+              </div>
+              <div class="form-group">
+                <label for="name">Preferred name and surname for certificate<span>*</span></label>
+                {{form.certificate_name}}
+              </div>
+         
+            </div>
+              <div class="formset grid3">
+            
+              <div class="form-group">
+                <label for="name">School/Institution:<span>*</span></label>
+                {{form.school_institution}}
+              </div>
+              <div class="form-group">
+                <label for="name">Designation<span>*</span></label>
+                {{form.designation}}
+              </div>
+         
+            
+            
+              <div class="form-group">
+                <label for="name">Country:<span>*</span></label>
+                {{form.country}}
+              </div>
+              <div class="form-group">
+                <label for="name">City:<span>*</span></label>
+                {{form.city}}
+              </div>
+         
+            
+            
+              <div class="form-group">
+                <label for="name">Telephone number:<span>*</span></label>
+                {{form.telephone}}
+              </div>
+              <div class="form-group">
+                <label for="name">Mobile number<span>*</span></label>
+                {{form.mobile}}
+              </div>
+         
+            
+            
+              <div class="form-group">
+                <label for="name">E-mail address:<span>*</span></label>
+                {{form.email}}
+              </div>
+              <div class="form-group">
+                <label for="name">Passport Number<span>*</span></label>
+                {{form.passport_number}}
+              </div>
+         
+            
+            
+              <div class="form-group">
+                <label for="name">Dietary requirements:<span>*</span></label>
+                {{form.dietary}}
+              </div>
+              <div class="form-group">
+                <label for="name">Other<span>*</span></label>
+                {{form.dietary_other}}
+              </div>
+         
+            </div>
+            <div class="section-head">
+              <span>CONFERENCE EVENTS</span>
+            
+            </div>
+            <div class="formset grid2">
+              <div class="form-group">
+                              <label for="name">Will you be attending the Welcome Cocktail Function?<span>*</span></label>
+                {{form.attend_cocktail}}
+              </div>
+              <div class="form-group">
+                
+                <label for="name">Will you be attending the Convention Dinner?<span>*</span></label>
+                {{form.attend_dinner}}
+              </div>
+            </div>
+            <div class="section-head">
+              <span>Accompanying Person</span>
+            
+            </div><p>An accompanying person is a partner/ spouse/ friend who will be joining you to travel, however is not attending the convention. Should the accompanying person be attending the convention, they would need to register as a delegate.</p>
+            <div class="formset">
+              <div class="form-group">
+                              <label for="name">Will you be bringing an accompanying person?<span>*</span></label>
+                {{form.bringing_accompanying_person}}
+              </div>
+     
+            </div>
+            <div class="section-head">
+              <span>COST SUMMARY</span>
+            
+            </div><p>All costs are stipulated in US Dollars. </p>
+            <div class="formset">
+              <div class="form-group">
+                              <label for="name">Please select a payment option for your registration:<span>*</span></label>
+                {{form.payment_method}}
+              </div>
+     
+            </div>
+            <div class="section-head">
+              <span>Billing information</span>
+            
+            </div>
+            <div class="formset grid2">
+              <div class="form-group">
+                              <label for="name">Company/Institution to be billed:<span>*</span></label>
+                {{form.billing_company}}
+              </div>
+              <div class="form-group">
+                              <label for="name">Billing contact person :<span>*</span></label>
+                {{form.billing_contact_person}}
+              </div>
+     
+            </div>
+            <div class="formset grid3">
+              <div class="form-group">
+                              <label for="name">Billing person contact number :<span>*</span></label>
+                {{form.billing_contact_number}}
+              </div>
+              <div class="form-group">
+                              <label for="name">Billing contact person e-mail address :<span>*</span></label>
+                {{form.billing_email}}
+              </div>
+              <div class="form-group">
+                              <label for="name">Billing address :<span>*</span></label>
+                {{form.billing_address}}
+              </div>
+     
+            </div>
+            <div class="section-head">
+              <span>Additional information</span>
+            
+            </div>
+            <div class="formset">
+              <div class="form-group">
+                              <label for="name">Emergency contact person name and telephone number:<span>*</span></label>
+                {{form.emergency_contact}}
+              </div>
+              <div class="form-group">
+                              <label for="name">Is there any additional information that you would like to provide?<span>*</span></label>
+                {{form.additional_info}}
+              </div>
+     
+            </div>
+            <div class="section-head">
+              <span>Social Media</span>
+            
+            </div>
+            <div class="formset">
+              {{form.accept_social_media}}
+                              <label for="name">I acknowledge that by registering for the Convention there may be photographs taken of me. I hereby give permission to the Convention Organisers to use these photographs on social media:<span>*</span></label>
+                
+              
+    
+     
+            </div>
+            <div class="section-head">
+              <span>POPIA DISCLAIMER</span>
+            
+            </div>
+            <div class="formset">
+              <p>In accordance to the Protection of Personal Information Act.  All personal information provided will solely be used for the purpose of this event.</p>
+                               {{form.popia_acknowledged}} <label for="name">I have noted the POPIA Disclaimer:<span>*</span></label>
+               
+              <div class="splash"></div>
+              <div class="form-group">
+                              <label for="name">Are you willing to share your personal information with other delegates attending the Convention?<span>*</span></label>
+                {{form.share_info_with_delegates}}
+              </div>
+     
+            </div>
+          </div>
+          <div class="form-footer grid2">
+            <div class="form-group">
+              <input type="submit" value="Submit" class="btn-submit" />
+            </div>
+            <div class="form-group">
+              <input type="reset" value="Reset" class="btn-reset" />
+        </form>
+        </div>
+      
+      </div>
+    </div>
+  </body>
+</html>
+
+

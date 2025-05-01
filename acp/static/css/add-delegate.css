@@ -1,0 +1,196 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Gilroy", sans-serif;
+}
+
+.acp-convention {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.acp-convention .bg-long {
+  width: 100%;
+  padding: 30px 10%;
+  height: 400px;
+}
+@media (max-width: 768px) {
+  .acp-convention .bg-long {
+    padding: 10px;
+  }
+}
+.acp-convention .bg-long .header-area {
+  -webkit-backdrop-filter: blur(6px);
+          backdrop-filter: blur(6px);
+  background: rgba(0, 59, 101, 0.819);
+  border-radius: 10px 10px 0px 0;
+  align-items: center;
+  padding: 20px;
+}
+.acp-convention .bg-long .header-area .header-text {
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  .acp-convention .bg-long .header-area .header-text {
+    font-size: 70%;
+  }
+}
+.acp-convention .bg-long .header-area .header-text h1 {
+  text-transform: uppercase;
+}
+.acp-convention .bg-long .header-area .logog {
+  width: 300px;
+  margin: 10px auto;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+}
+.acp-convention .bg-long .header-area .logog img {
+  width: 100px;
+}
+@media (max-width: 668px) {
+  .acp-convention .bg-long .header-area .logog img {
+    width: 60px;
+  }
+}
+.acp-convention .acp-form {
+  margin-top: -150px;
+  width: 100%;
+  padding: 0 10%;
+}
+@media (max-width: 768px) {
+  .acp-convention .acp-form {
+    padding: 20px;
+  }
+}
+.acp-convention .acp-form .max-form {
+  background-color: #ececec;
+  border-radius: 3px;
+  padding: 40px 100px;
+}
+@media (max-width: 768px) {
+  .acp-convention .acp-form .max-form {
+    padding: 20px;
+  }
+}
+.acp-convention .acp-form .max-form .form-ctrl .form-header {
+  margin-bottom: 40px;
+}
+.acp-convention .acp-form .max-form .form-ctrl .form-body .section-head {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: rgba(0, 59, 101, 0.962);
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+}
+.acp-convention .acp-form .max-form .form-ctrl .form-body p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #808080;
+  margin-bottom: 5px;
+  font-style: italic;
+}
+.acp-convention .acp-form .max-form .form-ctrl .form-body .formset {
+  margin-bottom: 20px;
+}
+.acp-convention .acp-form .max-form .form-ctrl .form-body .formset .form-group {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.acp-convention .acp-form .max-form .form-ctrl .form-body .formset .form-group label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #3b3b3b;
+  margin-bottom: 10px;
+}
+.acp-convention .acp-form .max-form .form-ctrl .form-body .formset .form-group input,
+.acp-convention .acp-form .max-form .form-ctrl .form-body .formset .form-group select,
+.acp-convention .acp-form .max-form .form-ctrl .form-body .formset .form-group textarea {
+  width: 100%;
+  padding: 8px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  font-weight: 400;
+  color: #3b3b3b;
+}
+.acp-convention .acp-form .max-form .form-ctrl .form-body .formset .splash {
+  margin: 20px 0;
+}
+.acp-convention .acp-form .max-form .form-ctrl .form-footer {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.acp-convention .acp-form .max-form .form-ctrl .form-footer .btn-submit,
+.acp-convention .acp-form .max-form .form-ctrl .form-footer .btn-reset {
+  color: #fff;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 2px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.acp-convention .acp-form .max-form .form-ctrl .form-footer .btn-submit:hover,
+.acp-convention .acp-form .max-form .form-ctrl .form-footer .btn-reset:hover {
+  background-color: #002a4d;
+}
+.acp-convention .acp-form .max-form .form-ctrl .form-footer .btn-submit {
+  background-color: #02528a;
+}
+.acp-convention .acp-form .max-form .form-ctrl .form-footer .btn-reset {
+  background-color: #646464;
+}
+
+.grid2 {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 668px) {
+  .grid2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.grid3 {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 768px) {
+  .grid3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 660px) {
+  .grid3 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.grid4 {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+}/*# sourceMappingURL=add-delegate.css.map */
