@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Successful</title>
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .thank-you-card {
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: none;
+        overflow: hidden;
+      }
+      .header-bg {
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        padding: 30px 0;
+        color: white;
+      }
+      .checkmark-circle {
+        width: 100px;
+        height: 100px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: -50px auto 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .checkmark {
+        color: #28a745;
+        font-size: 50px;
+      }
+      .btn-dashboard {
+        background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+        border: none;
+        padding: 10px 30px;
+        border-radius: 30px;
+        font-weight: 600;
+      }
+      .details-box {
+        background-color: #f1f8ff;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card thank-you-card">
+            <div class="header-bg text-center">
+              <h1 class="display-4 fw-bold">Thank You!</h1>
+              <p class="lead">Your registration was successful</p>
+            </div>
+
+            <div class="card-body text-center py-4 px-5">
+              <div class="checkmark-circle">
+                <i class="fas fa-check checkmark"></i>
+              </div>
+
+              <h2 class="fw-bold mb-3">Welcome to the ACP!</h2>
+              <p class="text-muted mb-4">
+                We're excited to have you join us. Your registration details
+                have been received.
+              </p>
+
+              <div class="details-box text-start">
+                <h5 class="fw-bold mb-3">
+                  <i class="fas fa-info-circle me-2"></i>What's Next?
+                </h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Complete the payment process to finalize your registration
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    Visit the ACP event website for more information
+                  </li>
+                  <li class="mb-2">
+                    <i class="fas fa-check-circle text-success me-2"></i> Forward your payment receipt to
+                    <a href="mailto:debasek68@gmail.com">debasek68@gmail.com</a> to confirm your registration
+                  </li>
+                  <li>
+                    <i class="fas fa-check-circle text-success me-2"></i> Follow
+                    us on social media for updates
+                  </li>
+                </ul>
+              </div>
+
+              <div class="mt-4">
+                <a href="#" class="btn btn-dashboard text-white btn-lg">
+                  <i class="fas fa-tachometer-alt me-2"></i> Read more about
+                  ASSHU
+                </a>
+              </div>
+
+              <div class="mt-4">
+                <p class="text-muted small">
+                  Need help? <a href="#">Contact our support team</a> or call +1
+                  (555) 123-4567
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

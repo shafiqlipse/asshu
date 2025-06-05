@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.core.validators import FileExtensionValidator
 
 
 class ConventionRegistration(models.Model):
@@ -77,6 +77,12 @@ class ConventionRegistration(models.Model):
     accept_social_media = models.BooleanField(default=False)
     popia_acknowledged = models.BooleanField(default=False)
     share_info_with_delegates = models.CharField(max_length=3, choices=MEMBER_STATUS)
+    photo = models.ImageField(
+        upload_to="student_photos/",
+        validators=[FileExtensionValidator(
+            allowed_extensions=["png", "jpg", "jpeg"])],null=True, blank=True       
+    )
+   
 
     submitted_at = models.DateTimeField(auto_now_add=True)
 

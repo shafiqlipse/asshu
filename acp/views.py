@@ -15,25 +15,43 @@ from io import BytesIO
 # Create your views here.
 from .models import *
 from .forms import *
-
+from django.db import IntegrityError
+from django.core.files.base import ContentFile
+import base64
 
 def ConventionRegistrationa(request):
-
     if request.method == "POST":
         form = ConventionRegistrationForm(request.POST, request.FILES)
 
         if form.is_valid():
-            # admin_user = User.objects.get_or_create(username="admin")
-            # Assign the currently logged-in user
-            form.save()
-            messages.success(request, "Form submitted successfully!")
-            return redirect("adddelegate")
+            try:
+                # Create a new instance of ConventionRegistration
+                new_delegate = form.save(commit=False)
+                # admin_user = User.objects.get_or_create(username="admin")
+                cropped_data = request.POST.get("photo_cropped")
+                if cropped_data:
+                    try:
+                        format, imgstr = cropped_data.split(";base64,")
+                        ext = format.split("/")[-1]
+                        data = ContentFile(base64.b64decode(imgstr), name=f"photo.{ext}")
+                        new_delegate.photo = data
+                    except (ValueError, TypeError) as e:
+                        messages.error(request, "Invalid image data. Please try again.")
+                        return render(request, "delegate_new.html", {"form": form})
 
+                # Save the new_delegate instance to the database
+                new_delegate.save()
+                # Assign the currently logged-in user
+                messages.success(request, "Form submitted successfully!")
+                return redirect("thank")
+            
+            except IntegrityError as e:
+                # Handle the IntegrityError, which occurs if a record with similar details already exists
+                messages.error(request, "A record with similar details already exists. Please verify your data.")
         else:
             # Add form-specific error messages for individual fields
             messages.error(request, "Form is not valid. Please check your input.")
             print(f"Form errors: {form.errors}")
-
     else:
         form = ConventionRegistrationForm()
 
@@ -41,46 +59,9 @@ def ConventionRegistrationa(request):
     return render(request, "delegate_new.html", context)
 
 
-# def nOfficials(request):
-#     # Get all officials
-#     nofficials = NOC.objects.all()
+def thankYou(request):
 
-#     # Apply the filter
-#     official_filter = nocFilter(request.GET, queryset=nofficials)
-#     filtered_officials = official_filter.qs
-
-#     if request.method == "POST":
-#         # Check which form was submitted
-#         if "Accreditation" in request.POST:
-#             template = get_template("noc/accreditation.html")
-#             filename = "Filtered_Accreditation.pdf"
-#         elif "Certificate" in request.POST:
-#             template = get_template("teams/offcert.html")  # Your certificate template
-#             filename = "Filtered_Certificate.pdf"
-#         else:
-#             return HttpResponse("Invalid form submission")
-
-#         # Generate PDF
-#         context = {"officials": filtered_officials}
-#         html = template.render(context)
-
-#         # Create a PDF
-#         pdf_buffer = BytesIO()
-#         pisa_status = pisa.CreatePDF(html, dest=pdf_buffer)
-
-#         if pisa_status.err:
-#             return HttpResponse("We had some errors <pre>" + html + "</pre>")
-
-#         pdf_buffer.seek(0)
-
-#         # Return the PDF as a response
-#         response = HttpResponse(content_type="application/pdf")
-#         response["Content-Disposition"] = f'attachment; filename="{filename}"'
-#         response.write(pdf_buffer.getvalue())
-#         return response
-#     else:
-#         # Render the filter form
-#         return render(request, "noc/noffs.html", {"filter": official_filter})
+        return render(request, "thank.html")
 
 
 from django.http import HttpResponse

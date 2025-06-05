@@ -19,6 +19,7 @@ class ConventionRegistrationForm(forms.ModelForm):
             "telephone",
             "mobile",
             "email",
+            "photo",
             "passport_number",
             "registering_for",
             "is_icp_member",

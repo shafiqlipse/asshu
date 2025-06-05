@@ -10,7 +10,7 @@ from .views import *
 urlpatterns = [
     # venues
     path("adddelegate/", ConventionRegistrationa, name="adddelegate"),
-    # path("teccred/", teccreditation, name="teccred"),
+    path("thank/", thankYou, name="thank"),
     path('export-csv/', export_csv, name='export_csv'),
     path("delegates/", ConventionRegistrations, name="delegates"),
     path("delegate/<int:id>", delegate_details, name="delegate"),
