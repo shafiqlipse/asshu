@@ -50,7 +50,7 @@ class ConventionRegistration(models.Model):
     country = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     telephone = models.CharField(max_length=20)
-    mobile = models.CharField(max_length=20)
+    mobile = models.CharField(max_length=20,null=True, blank=True)
     email = models.EmailField()
     passport_number = models.CharField(max_length=50, blank=True)
     
