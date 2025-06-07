@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2025 ACP WORLD CONVENTION Uganda</title>
+    <title>2025 African Confederation of Principals conference  Uganda</title>
     <link rel="icon" href="{%static 'images/asshu.png'%}" sizes="35x35" />
     <link rel="stylesheet" href="{% static 'css/add-delegate.css' %}" />
         <link
@@ -22,8 +22,8 @@
             <img src="{% static 'img/images.jpeg' %}" alt="" />
           </div> 
           <div class="header-text">
-            <h1>2025 ACP WORLD CONVENTION Uganda</h1>
-            <p>25 - 28 AUGUST 2025</p>
+            <h1>2025 African Confederation of Principals conference Uganda</h1>
+            <p>25<sup>th</sup> - 28<sup>th</sup> AUGUST 2025</p>
           </div>
        
         </div>
@@ -54,7 +54,7 @@
               </div>
               <div class="form-group">
                 
-                <label for="name">Are you an ICP Member? :<span>*</span></label>
+                <label for="name">Are you an ACP Member? :<span>*</span></label>
                 {{form.is_icp_member}}
               </div>
             </div>
@@ -129,89 +129,13 @@
                 {{form.email}}
               </div>
               <div class="form-group">
-                <label for="name">Passport Number<span>*</span></label>
+                <label for="name">Passport Number</label>
                 {{form.passport_number}}
               </div>
          
-            
-            
-              <div class="form-group">
-                <label for="name">Dietary requirements:<span>*</span></label>
-                {{form.dietary}}
-              </div>
-              <div class="form-group">
-                <label for="name">Other<span>*</span></label>
-                {{form.dietary_other}}
-              </div>
-         
+          
             </div>
-            <div class="section-head">
-              <span>CONFERENCE EVENTS</span>
-            
-            </div>
-            <div class="formset grid2">
-              <div class="form-group">
-                              <label for="name">Will you be attending the Welcome Cocktail Function?<span>*</span></label>
-                {{form.attend_cocktail}}
-              </div>
-              <div class="form-group">
-                
-                <label for="name">Will you be attending the Convention Dinner?<span>*</span></label>
-                {{form.attend_dinner}}
-              </div>
-            </div>
-            <div class="section-head">
-              <span>Accompanying Person</span>
-            
-            </div><p>An accompanying person is a partner/ spouse/ friend who will be joining you to travel, however is not attending the convention. Should the accompanying person be attending the convention, they would need to register as a delegate.</p>
-            <div class="formset">
-              <div class="form-group">
-                              <label for="name">Will you be bringing an accompanying person?<span>*</span></label>
-                {{form.bringing_accompanying_person}}
-              </div>
-     
-            </div>
-            <div class="section-head">
-              <span>COST SUMMARY</span>
-            
-            </div><p>All costs are stipulated in US Dollars. </p>
-            <div class="formset">
-              <div class="form-group">
-                              <label for="name">Please select a payment option for your registration:<span>*</span></label>
-                {{form.payment_method}}
-              </div>
-     
-            </div>
-            <div class="section-head">
-              <span>Billing information</span>
-            
-            </div>
-            <div class="formset grid2">
-              <div class="form-group">
-                              <label for="name">Company/Institution to be billed:<span>*</span></label>
-                {{form.billing_company}}
-              </div>
-              <div class="form-group">
-                              <label for="name">Billing contact person :<span>*</span></label>
-                {{form.billing_contact_person}}
-              </div>
-     
-            </div>
-            <div class="formset grid3">
-              <div class="form-group">
-                              <label for="name">Billing person contact number :<span>*</span></label>
-                {{form.billing_contact_number}}
-              </div>
-              <div class="form-group">
-                              <label for="name">Billing contact person e-mail address :<span>*</span></label>
-                {{form.billing_email}}
-              </div>
-              <div class="form-group">
-                              <label for="name">Billing address :<span>*</span></label>
-                {{form.billing_address}}
-              </div>
-     
-            </div>
+
             <div class="section-head">
               <span>Additional information</span>
             
@@ -366,34 +290,7 @@
       });
 
     </script>
-    <script>
-        
-                document.addEventListener('DOMContentLoaded', function() {
-                    // Get the elements - using Django's form IDs
-                    const dietarySelect = document.getElementById('{{ form.dietary.id_for_label }}');
-                    const dietaryOtherInput = document.getElementById('{{ form.dietary_other.id_for_label }}');
 
-                    // Initialize - disable other field if not "other"
-                    function updateDietaryOtherField() {
-                        if (dietarySelect.value === 'other') {
-                            dietaryOtherInput.disabled = false;
-                            dietaryOtherInput.required = true;  // Optional: make required if other is selected
-                            dietaryOtherInput.focus();
-                        } else {
-                            dietaryOtherInput.disabled = true;
-                            dietaryOtherInput.required = false;
-                            dietaryOtherInput.value = '';  // Clear the field when disabled
-                        }
-                    }
-
-                    // Set initial state
-                    updateDietaryOtherField();
-
-                    // Add event listener
-                    dietarySelect.addEventListener('change', updateDietaryOtherField);
-                });
-   
-    </script>
   </body>
 </html>
 

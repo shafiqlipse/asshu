@@ -56,22 +56,22 @@ class ConventionRegistration(models.Model):
     
     registering_for = models.CharField(max_length=20, choices=ICP_EVENT_CHOICES)
     is_icp_member = models.CharField(max_length=3, choices=MEMBER_STATUS)
-    dietary = models.CharField(max_length=20, choices=DIETARY_CHOICES)
-    dietary_other = models.CharField(max_length=100, blank=True)
+    dietary = models.CharField(max_length=20, choices=DIETARY_CHOICES,null=True, blank=True)
+    dietary_other = models.CharField(max_length=100, blank=True,null=True)
 
-    attend_cocktail = models.CharField(max_length=3, choices=MEMBER_STATUS)
-    attend_dinner = models.CharField(max_length=3, choices=MEMBER_STATUS)
-    bringing_accompanying_person = models.CharField(max_length=3, choices=MEMBER_STATUS)
+    attend_cocktail = models.CharField(max_length=3, choices=MEMBER_STATUS,null=True, blank=True)
+    attend_dinner = models.CharField(max_length=3, choices=MEMBER_STATUS,null=True, blank=True)
+    bringing_accompanying_person = models.CharField(max_length=3, choices=MEMBER_STATUS,null=True, blank=True)
 
-    payment_method = models.CharField(max_length=10, choices=PAYMENT_OPTIONS)
+    payment_method = models.CharField(max_length=10, choices=PAYMENT_OPTIONS,null=True, blank=True)
 
-    billing_company = models.CharField(max_length=255)
-    billing_contact_person = models.CharField(max_length=100)
-    billing_contact_number = models.CharField(max_length=20)
-    billing_email = models.EmailField()
-    billing_address = models.CharField(max_length=100)
+    billing_company = models.CharField(max_length=255,null=True, blank=True)
+    billing_contact_person = models.CharField(max_length=100,null=True, blank=True)
+    billing_contact_number = models.CharField(max_length=20,null=True, blank=True)
+    billing_email = models.EmailField(null=True, blank=True)
+    billing_address = models.CharField(max_length=100,null=True, blank=True)
 
-    emergency_contact = models.CharField(max_length=100)
+    emergency_contact = models.CharField(max_length=100,null=True, blank=True)
     additional_info = models.TextField(blank=True)
 
     accept_social_media = models.BooleanField(default=False)
