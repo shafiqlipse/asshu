@@ -52,26 +52,20 @@
                         {{delegate.surname}}
                       </h5>
                       <p class="text-muted font-size-13">
-                        {{delegate.school_institution}}
+                       @{{delegate.badge_name}}
                       </p>
 
                       <div
                         class="d-flex flex-wrap align-items-start gap-2 gap-lg-3 text-muted font-size-13"
                       >
-                        <div>{{delegate.designation}}</div>
+                        <div>{{delegate.designation}}, {{delegate.school_institution}}</div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="col-sm-auto order-1 order-sm-2">
-                <div class="d-flex align-items-start justify-content-end gap-2">
-                  <div>
-                    <button type="button" class="btn btn-soft-light">
-                      <i class="me-1"></i> Message
-                    </button>
-                  </div>
-                  <div>
+
                     <div class="dropdown">
                       <button
                         class="btn btn-link font-size-16 shadow-none text-muted dropdown-toggle"
@@ -114,28 +108,18 @@
                     <div class="row">
                       <div class="col-xl-2">
                         <div>
-                          <h5 class="font-size-15">Bio :</h5>
+                          <h5 class="font-size-15">Address :</h5>
                         </div>
                       </div>
                       <div class="col-xl">
                         <div class="text-muted">
                           <p class="mb-2">
-                            Hi I'm Phyllis Gatlin, Lorem Ipsum is simply dummy
-                            text of the printing and typesetting industry. Lorem
-                            Ipsum has been the industry's standard dummy text
-                            ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type
-                            specimen book. It has survived not only five
-                            centuries, but also the leap into electronic
-                            typesetting, remaining essentially unchanged. It was
-                            popularised in the 1960s with the release of
-                            Letraset sheets containing Lorem Ipsum passages
+                                 {{delegate.telephone}} <br />
+                            {{delegate.email}} <br />
+                            {{delegate.passport_number}}
                           </p>
                           <p class="mb-0">
-                            It is a long established fact that a reader will be
-                            distracted by the readable content of a page when
-                            looking at it has a more-or-less normal distribution
-                            of letters
+                       {{delegate.city}}, {{delegate.country}}
                           </p>
                         </div>
                       </div>
@@ -146,23 +130,13 @@
                     <div class="row">
                       <div class="col-xl-2">
                         <div>
-                          <h5 class="font-size-15">Experience :</h5>
+                          <h5 class="font-size-15">Miscellaneous :</h5>
                         </div>
                       </div>
                       <div class="col-xl">
                         <div class="text-muted">
                           <p>
-                            If several languages coalesce, the grammar of the
-                            resulting language is more simple and regular than
-                            that of the individual languages. The new common
-                            language will be more simple and regular than the
-                            existing European languages. It will be as simple as
-                            Occidental; in fact, it will be Occidental. To an
-                            English person, it will seem like simplified
-                            English, as a skeptical Cambridge friend of mine
-                            told me what Occidental is. The European languages
-                            are members of the same family. Their separate
-                            existence is a myth. For science, music, sport, etc
+                           {{delegate.additional_info}}
                           </p>
 
                           <ul class="list-unstyled mb-0">
@@ -170,25 +144,28 @@
                               <i
                                 class="mdi mdi-circle-medium me-1 text-success align-middle"
                               ></i
-                              >Donec vitae sapien ut libero venenatis faucibus
+                              >Emergency contact:<strong> {{delegate.emergency_contact}}</strong>  
                             </li>
                             <li class="py-1">
                               <i
                                 class="mdi mdi-circle-medium me-1 text-success align-middle"
                               ></i
-                              >Quisque rutrum aenean imperdiet
+                              >Social Media: <strong> {{ delegate.accept_social_media }}</strong>
+                             
                             </li>
                             <li class="py-1">
                               <i
                                 class="mdi mdi-circle-medium me-1 text-success align-middle"
                               ></i
-                              >Integer ante a consectetuer eget
+                              >POPIA Compliance: <strong> {{ delegate.popia_acknowledged }}</strong>
+                             
                             </li>
                             <li class="py-1">
                               <i
                                 class="mdi mdi-circle-medium me-1 text-success align-middle"
                               ></i
-                              >Phasellus nec sem in justo pellentesque
+                              >Share Contact Details: <strong> {{ delegate.share_info_with_delegates }}</strong>
+                             
                             </li>
                           </ul>
                         </div>
