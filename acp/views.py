@@ -84,7 +84,7 @@ def ConventionRegistrations(request):
     if request.method == "POST":
         # Check which form was submitted
         if "Accreditation" in request.POST:
-            template = get_template("acred.html")
+            template = get_template("accred.html")
             filename = "Asshu_Accreditation.pdf"
         elif "Certificate" in request.POST:
             template = get_template(

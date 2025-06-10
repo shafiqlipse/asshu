@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Album</title>
+    <title>Accreditation</title>
   </head>
 
   <body>
@@ -62,10 +62,7 @@
                   <tr>
                     <td class="td">
                       <div class="inner">
-                        <span
-                          >{{ athlete.contact|upper}}
-                          ({{athlete.gender|upper}})</span
-                        >
+
                         <br />
                         {% if athlete.photo %}
                         <img
@@ -81,11 +78,11 @@
                         <br />
                         <span
                           >{{ athlete.first_name|upper }}
-                          {{athlete.last_name|upper }}
+                          {{athlete.surname|upper }}
                         </span>
                         <br />
                         <span>{{ athlete.designation|upper }}</span><br />
-                        <span>{{ athlete.school|upper }}</span><br />
+                        <span>{{ athlete.school_institution |upper }}</span><br />
                         <span>{{ athlete.district|upper }}</span><br />
                       </div>
                     </td>
