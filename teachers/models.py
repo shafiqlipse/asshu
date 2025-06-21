@@ -3,6 +3,20 @@ from accounts.models import District,Region
 
 # Create your models here.
 
+class Meeting(models.Model):
+
+    name = models.CharField(max_length=100)
+    region = models.ForeignKey(
+        Region,
+        related_name="meeting_region",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
+
+    def __str__(self):
+        return self.name
+
 
 class Teacher(models.Model):
 
@@ -27,7 +41,13 @@ class Teacher(models.Model):
         null=True,
         blank=True,
     )
-
+    meeting = models.ForeignKey(
+        Meeting,
+        related_name="meeting",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True,
+    )
     contact = models.CharField(max_length=15)
     school = models.CharField(max_length=125)
 
@@ -46,3 +66,4 @@ class Teacher(models.Model):
 
     def __str__(self):
         return self.first_name
+

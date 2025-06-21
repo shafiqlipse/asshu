@@ -15,6 +15,7 @@ class TeacherForm(forms.ModelForm):
             "region",
             "district",
             "gender",
+            "meeting",
             "school",
         ]
         widgets = {
@@ -23,6 +24,7 @@ class TeacherForm(forms.ModelForm):
             "school": forms.TextInput(attrs={"class": "form-control"}),
             "contact": forms.TextInput(attrs={"class": "form-control"}),
             "designation": forms.Select(attrs={"class": "form-control"}),
+            "meeting": forms.Select(attrs={"class": "form-control","required":True}),
             "region": forms.Select(attrs={"class": "form-control"}),
             "district": forms.Select(attrs={"class": "form-control"}),
             "gender": forms.Select(attrs={"class": "form-control"}),

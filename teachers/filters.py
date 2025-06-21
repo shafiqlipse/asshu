@@ -10,6 +10,7 @@ class TeacherFilter(django_filters.FilterSet):
         model = Teacher
         fields = [
             "district",
+            "meeting",
             "designation",
             "gender","id_range",
         ]  # Add all fields you want to filter on
