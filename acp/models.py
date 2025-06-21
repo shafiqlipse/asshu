@@ -4,9 +4,9 @@ from django.core.validators import FileExtensionValidator
 
 class ConventionRegistration(models.Model):
     ICP_EVENT_CHOICES = [
-        ('council', 'ICP Council | August 25 - 28, 2025'),
-        ('convention', 'ICP Convention | August 25 - 28, 2025'),
-        ('combined', 'Combined ICP Council & ICP World Convention'),
+        ('council', 'ACP Council | August 25 - 28, 2025'),
+        ('convention', 'ACP Convention | August 25 - 28, 2025'),
+        ('combined', 'Combined ACP Council & ACP World Convention'),
     ]
 
     MEMBER_STATUS = [
