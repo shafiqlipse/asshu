@@ -10,15 +10,15 @@ base/migrations/*
 dashboard/migrations/*
 events/migrations/*
 articles/migrations/*
-# enrollment/migrations/*
-# transfers/migrations/*
+acp/migrations/*
+agm/migrations/*
 # zone/migrations/*
 
 
 # Media and uploaded files (one level up)
 photo/
 featured_images/
-# trainee_photo/
+member_photos/
 # trainee_photos/
 # transfer_documents/
 # certificates/
