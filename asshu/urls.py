@@ -20,6 +20,7 @@ urlpatterns = [
     path("acp-convention/", include("acp.urls")),
     path("articles/", include("articles.urls")),
     path("events/", include("events.urls")),
+    path("agm/", include("agm.urls")),
     
     # ckeditor urls
 

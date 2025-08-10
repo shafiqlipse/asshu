@@ -1,0 +1,83 @@
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Album</title>
+  </head>
+
+  <body>
+    <style>
+      @page {
+        size: A4 portrait;
+        margin: 0;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .member-table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      .header .members table tbody tr td {
+        padding-top: 290px;
+        padding-left: 70px;
+        padding-right: 30px;
+        margin: 0;
+      }
+      .header .members table tbody tr .member-cell .member-info {
+        font-size: 1.4em; /* Adjust font size */
+        text-align: center; /* Align text to the left */
+        width: 800px; /* Set a fixed width to ensure text fits on one line */
+      }
+      .header .members table tbody tr .member-cell .member-image img {
+        width: 120px;
+        height: 120px;
+        image-orientation: from-image;
+        transform: rotate(0deg);
+      }
+    </style>
+    <div class="header">
+      <div class="members">
+        <table class="member-table">
+          <tbody>
+            {% for member in members %}
+            <tr>
+              <td class="member-cell">
+                <div class="member-info">
+                  <span
+                    ><strong
+                      >{{ member.first_name|upper }}
+                      {{member.last_name|upper}}
+                    </strong></span
+                  ><br />
+
+                  <span>{{ member.designation|upper }}</span><br />
+                  <span>{{ member.school|upper }}</span><br />
+                  <span>{{ member.district|upper }} </span><br />
+                </div>
+              </td>
+              <td class="member-cell">
+                <div class="member-image">
+                  {% if member.photo %}
+                  <img
+                    src="{{ member.photo.path }}"
+                    alt="{{ member.first_name }}"
+                  />
+                  {% else %}
+                  <img
+                    src="{% static 'images/profile.png' %}"
+                    alt="{{ member.last_name }}"
+                  />
+                  {% endif %}
+                </div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
