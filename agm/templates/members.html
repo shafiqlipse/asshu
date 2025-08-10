@@ -1,68 +1,107 @@
 {% extends "dashboard/dashboard.html" %}
 
 <!--static-->
-{% block title %}Officials{% endblock %}
+{% block title %}ACP Delegates{% endblock %}
 <!--static-->
 {% load static %}
 <!--khfufufu-->
 {% block content %}
-<div class="schools-dew">
-  <div class="head flex">
-    <h1>ASSHU</h1>
-    <hr />
-  </div>
-  <div class="filter">
-    <h2>Filter Members</h2>
-    <form method="get" class="form-contol">
-      {{ filter.form.as_p }}
-      <button type="submit">Apply Filter</button>
-    </form>
-    <form method="post" class="form-contol">
-      {% csrf_token %}
-      <input type="submit" name="Accreditation" value="Accreditation" />
-    </form>
- 
-    <form method="post" class="form-contol">
-      {% csrf_token %}
-      <input type="submit" name="Certificate" value="Certificate" />
-    </form>
-    <a href="{% url 'export_csv' %}">Export CSV</a>
-  </div>
-  <div class="filterlist glue">
-    <div class="official-list">
-      <table id="myTable" class="display">
-        <thead>
-          <tr>
-            <th>Names</th>
-            <th>School</th>
-            <th>Designation</th>
-            <th>Region</th>
-            <th>District</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for member in filter.qs %}
-          <tr>
-            <td>
-              <a href="{% url 'member' member.id%}"
-                >{{member.first_name}} {{member.last_name}}</a
-              >
-            </td>
-            <td>{{member.school}}</td>
-            <td>{{member.designation}}</td>
-            <td>{{member.region}}</td>
+<div class="page-content">
+  <div class="container-fluid">
+    <!-- start page title -->
+    <div class="row">
+      <div class="col-12">
+        <div
+          class="page-title-box d-sm-flex align-items-center justify-content-between"
+        >
+          <h4 class="mb-sm-0 font-size-18">ACP Delegates</h4>
 
-            <td>{{member.district}}</td>
-            <td><a href="{%url 'update_member' member.id %}">Edit</a></td>
-            <td><a href="{%url 'delete_member' member.id %}">delete</a></td>
-          </tr>
-
-          {%endfor%}
-        </tbody>
-      </table>
+          <div class="page-title-right">
+            <ol class="breadcrumb m-0">
+              <li class="breadcrumb-item">
+                <a href="javascript: void(0);">Dashboard</a>
+              </li>
+              <li class="breadcrumb-item active">Delegates</li>
+            </ol>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- end page title -->
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <div class="filter">
+              <h2>Filter Delegates</h2>
+              <form method="get" class="form-contol">
+                {{ filter.form.as_p }}
+                <button type="submit">Apply Filter</button>
+              </form>
+              <form method="post" class="form-contol">
+                {% csrf_token %}
+                <input
+                  type="submit"
+                  name="Accreditation"
+                  value="Accreditation"
+                />
+              </form>
+
+              <form method="post" class="form-contol">
+                {% csrf_token %}
+                <input type="submit" name="Certificate" value="Certificate" />
+              </form>
+              <a href="{% url 'export_csv' %}">Export CSV</a>
+            </div>
+            <div class="card-body">
+              <table id="myTable" class="table dt-responsive nowrap w-100">
+                <thead>
+                  <tr>
+                    <th>Names</th>
+                    <th>Institution</th>
+                    <th>Designation</th>
+                    <th>Country</th>
+                    <th>Email</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  {% for member in filter.qs %}
+                  <tr>
+                    <td>
+                      <a href="{% url 'member' member.id%}"
+                        >{{member.first_name}} {{member.last_name}}</a
+                      >
+                    </td>
+                    <td>{{member.school}}</td>
+                    <td>{{member.designation}}</td>
+                    <td>{{member.region}}</td>
+
+                    <td>{{member.district}}</td>
+                    <td>
+                      <a href="{%url 'update_member' member.id %}">Edit</a>
+                    </td>
+                    <td>
+                      <a href="{%url 'delete_member' member.id %}">delete</a>
+                    </td>
+                  </tr>
+
+                  {%endfor%}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- end col -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end row -->
   </div>
+  <!-- end row -->
+
+  {% endblock %}
 </div>
-{% endblock %}
