@@ -40,8 +40,8 @@ class Member(models.Model):
         max_length=40,
         choices=[
             ("Principal", "Principal"),
-            ("HeadMember", "HeadMember"),
-            ("Deputy HeadMember", "Deputy HeadMember"),
+            ("Headteacher", "Headteacher"),
+            ("Deputy Headteacher", "Deputy Headteacher"),
         ],
     )
 
