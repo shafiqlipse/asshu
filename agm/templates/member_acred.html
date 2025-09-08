@@ -12,6 +12,7 @@
         @page {
           size: A4 portrait; /* Set the size of the page to A4 in portrait orientation */
           margin: 0; /* Remove default margin */
+          background-image: url("https://asshu.edu.ug/asshu.jpg");
         }
 
         body {
@@ -19,42 +20,42 @@
           padding: 0; /* Remove default body padding */
         }
 
-        .athletes table {
+        .members table {
           display: grid;
           grid-template-rows: repeat(2, 1fr); /* Two rows */
           grid-template-columns: repeat(2, 1fr); /* Two columns */
           gap: 10px; /* Adjust the gap between grid items */
         }
       }
-      .header .athletes table tbody tr td table tr .td {
+      .header .members table tbody tr td table tr .td {
         padding-top: 105px;
         padding-bottom: 40px;
         padding-left: 50px;
         padding-right: 40px;
         margin: 0;
       }
-      .header .athletes table tbody tr td table tr .td .inner {
+      .header .members table tbody tr td table tr .td .inner {
         width: 350px;
         text-align: center;
         text-transform: uppercase;
       }
-      .header .athletes table tbody tr td table tr .td .inner img {
+      .header .members table tbody tr td table tr .td .inner img {
         width: 160px;
         height: 160px;
-        image-orientation: from-image;
-        transform: rotate(0deg);
       }
-      .header .athletes table tbody tr td table tr .td .inner span {
+      .header .members table tbody tr td table tr .td .inner .name {
+        font-size: 18px;
+        font-weight: bold;
       }
     </style>
     <div class="header">
-      <div class="athletes">
+      <div class="members">
         <table>
           <tbody>
-            {% for athlete in members %}
+            {% for member in members %}
             <!---->
             {% if forloop.counter0|divisibleby:2 %}
-            <!-- Start a new row for every even-numbered athlete -->
+            <!-- Start a new row for every even-numbered member -->
             <tr>
               {% endif %}
               <td>
@@ -63,37 +64,38 @@
                     <td class="td">
                       <div class="inner">
                         <span
-                          >{{ athlete.contact|upper}}
-                          ({{athlete.gender|upper}})</span
+                          >{{ member.contact|upper}}
+                          ({{member.gender|upper}})</span
                         >
                         <br />
-                        {% if athlete.photo %}
+                        {% if member.photo %}
                         <img
-                          src="{{ athlete.photo.path }}"
-                          alt="{{ athlete.first_name }}"
+                          src="{{ member.photo.path }}"
+                          alt="{{ member.first_name }}"
                         />
                         {% else %}
                         <img
                           src="{% static 'images/profile.png' %}"
-                          alt="{{ athlete.last_name }}"
+                          alt="{{ member.last_name }}"
                         />
                         {% endif %}
                         <br />
-                        <span
-                          >{{ athlete.first_name|upper }}
-                          {{athlete.last_name|upper }}
+                        <br />
+                        <span class="name"
+                          >{{ member.first_name|upper }}
+                          {{member.last_name|upper }}
                         </span>
                         <br />
-                        <span>{{ athlete.designation|upper }}</span><br />
-                        <span>{{ athlete.school|upper }}</span><br />
-                        <span>{{ athlete.district|upper }}</span><br />
+                        <span>{{ member.designation|upper }}</span><br />
+                        <span>{{ member.school|upper }}</span><br />
+                        <span>{{ member.district|upper }}</span><br />
                       </div>
                     </td>
                   </tr>
                 </table>
               </td>
               {% if forloop.last or forloop.counter0|add:1|divisibleby:2 %}
-              <!-- End the row for the last or odd-numbered athlete -->
+              <!-- End the row for the last or odd-numbered member -->
             </tr>
             {% endif %} {% endfor %}
           </tbody>

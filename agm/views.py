@@ -41,46 +41,7 @@ def Membera(request):
     return render(request, "member_new.html", context)
 
 
-# def nOfficials(request):
-#     # Get all officials
-#     nofficials = NOC.objects.all()
 
-#     # Apply the filter
-#     official_filter = nocFilter(request.GET, queryset=nofficials)
-#     filtered_officials = official_filter.qs
-
-#     if request.method == "POST":
-#         # Check which form was submitted
-#         if "Accreditation" in request.POST:
-#             template = get_template("noc/accreditation.html")
-#             filename = "Filtered_Accreditation.pdf"
-#         elif "Certificate" in request.POST:
-#             template = get_template("teams/offcert.html")  # Your certificate template
-#             filename = "Filtered_Certificate.pdf"
-#         else:
-#             return HttpResponse("Invalid form submission")
-
-#         # Generate PDF
-#         context = {"officials": filtered_officials}
-#         html = template.render(context)
-
-#         # Create a PDF
-#         pdf_buffer = BytesIO()
-#         pisa_status = pisa.CreatePDF(html, dest=pdf_buffer)
-
-#         if pisa_status.err:
-#             return HttpResponse("We had some errors <pre>" + html + "</pre>")
-
-#         pdf_buffer.seek(0)
-
-#         # Return the PDF as a response
-#         response = HttpResponse(content_type="application/pdf")
-#         response["Content-Disposition"] = f'attachment; filename="{filename}"'
-#         response.write(pdf_buffer.getvalue())
-#         return response
-#     else:
-#         # Render the filter form
-#         return render(request, "noc/noffs.html", {"filter": official_filter})
 
 
 from django.http import HttpResponse
@@ -103,7 +64,7 @@ def Members(request):
     if request.method == "POST":
         # Check which form was submitted
         if "Accreditation" in request.POST:
-            template = get_template("acred.html")
+            template = get_template("member_acred.html")
             filename = "Asshu_Accreditation.pdf"
         elif "Certificate" in request.POST:
             template = get_template(
