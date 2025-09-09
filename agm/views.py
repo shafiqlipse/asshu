@@ -124,6 +124,12 @@ def member_update(request, id):
     }
     return render(request, "update_member.html", context)
 
+def activate_member(request, id):
+    member = get_object_or_404(Member, id=id)
+    member.status = "Verified"
+    member.save()
+    messages.success(request, "Member Verified successfully.")  # alert message
+    return redirect("members") 
 
 def member_delete(request, id):
     stud = Member.objects.get(id=id)

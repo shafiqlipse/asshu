@@ -54,6 +54,10 @@
               </form>
               <a href="{% url 'export_csv' %}">Export CSV</a>
             </div>
+            {% if messages %} {% for message in messages %}
+            <div class="alert alert-success">{{ message }}</div>
+            {% endfor %} {% endif %}
+
             <div class="card-body">
               <table id="myTable" class="table dt-responsive nowrap w-100">
                 <thead>
@@ -61,8 +65,8 @@
                     <th>Names</th>
                     <th>Institution</th>
                     <th>Designation</th>
-                    <th>Country</th>
-                    <th>Email</th>
+                    <th>District</th>
+                    <th>Activate</th>
                     <th>Edit</th>
                     <th>Delete</th>
                   </tr>
@@ -78,9 +82,13 @@
                     </td>
                     <td>{{member.school}}</td>
                     <td>{{member.designation}}</td>
-                    <td>{{member.region}}</td>
 
                     <td>{{member.district}}</td>
+                    <td>
+                      <a href="{%url 'activate_member' member.id %}"
+                        >Activate</a
+                      >
+                    </td>
                     <td>
                       <a href="{%url 'update_member' member.id %}">Edit</a>
                     </td>

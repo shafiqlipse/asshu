@@ -498,11 +498,7 @@
                     </a>
                   </li>
 
-                  <li>
-                    <a href="{% url 'members'%}">
-                      <span data-key="t-chat">Members</span>
-                    </a>
-                  </li>
+
 
                   <li>
                     <a href="javascript: void(0);" class="has-arrow">
@@ -525,9 +521,9 @@
               </li>
 
               <li>
-                <a href="javascript: void(0);" class="has-arrow">
+                <a href="{% url 'members'%}" class="has-arrow">
                   <i data-feather="users"></i>
-                  <span data-key="t-authentication">Members</span>
+                  <span data-key="t-authentication">AGM Members</span>
                 </a>
                 <ul class="sub-menu" aria-expanded="false">
                   <li>
