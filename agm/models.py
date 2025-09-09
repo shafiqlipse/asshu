@@ -44,6 +44,15 @@ class Member(models.Model):
             ("Deputy Headteacher", "Deputy Headteacher"),
         ],
     )
+    status = models.CharField(
+        max_length=40,
+        choices=[
+            ("Pending", "Pending"),
+            ("Verified", "Verified"),
+            ("Unverified", "Unverified"),
+        ],default="Pending" 
+    )
+
 
     def __str__(self):
         return self.first_name
