@@ -10,6 +10,6 @@ class MemberFilter(django_filters.FilterSet):
         model = Member
         fields = [
             "district",
-            "designation",
+            "designation","status",
             "gender","id_range",
         ]  # Add all fields you want to filter on
