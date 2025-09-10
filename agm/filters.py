@@ -1,6 +1,6 @@
 import django_filters
 from .models import Member
-from accounts.models import District
+from accounts.models import Region
 from django import forms
 
 
@@ -16,9 +16,9 @@ class MemberFilter(django_filters.FilterSet):
         label="Designation",
         widget=forms.Select(attrs={"class": "form-control js-example-basic-single"})
     )
-    district = django_filters.ModelChoiceFilter(
-        queryset=District.objects.all(),
-        label="District",
+    region = django_filters.ModelChoiceFilter(
+        queryset=Region.objects.all(),
+        label="Region",
         widget=forms.Select(attrs={"class": "form-control js-example-basic-single"})
     )
     gender = django_filters.ChoiceFilter(
@@ -35,7 +35,7 @@ class MemberFilter(django_filters.FilterSet):
     class Meta:
         model = Member
         fields = [
-            "district",
+            "region",
             "designation","status",
             "gender","id_range",
         ]  # Add all fields you want to filter on
