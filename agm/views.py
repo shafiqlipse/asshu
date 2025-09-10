@@ -68,7 +68,7 @@ def Members(request):
             filename = "Asshu_Accreditation.pdf"
         elif "Certificate" in request.POST:
             template = get_template(
-                "certificate_temaplate.html"
+                "certificate_member.html"
             )  # Your certificate template
             filename = "Filtered_Certificate.pdf"
         else:
