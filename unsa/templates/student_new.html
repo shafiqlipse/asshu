@@ -3,15 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ASSHU | REGISTRATION{% block title %}{% endblock title %}</title>
+    <title>UNSA | REGISTRATION{% block title %}{% endblock title %}</title>
     <link rel="icon" href="{%static 'images/asshu.png'%}" sizes="35x35" />
     <link rel="stylesheet" href="{% static 'css/profile/school_new.css'%}" />
     <link rel="stylesheet" href="{% static 'css/base/base.css'%}" />
     <link rel="stylesheet" href="{% static 'css/maint.css'%}" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css"
-    />
     <script
       src="https://code.jquery.com/jquery-2.1.1.min.js"
       type="text/javascript"
@@ -19,6 +15,10 @@
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/css/select2.min.css"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css"
     />
     <link
       rel="stylesheet"
@@ -68,28 +68,26 @@
                 </ul>
                 {% endif %}
                 <div class="imgbox">
-                  <div class="col-md-4">
-                    <div
-                      class="field"
-                      style="
-                        background-image: url('https://upssaonline.com/profile.png');
-                        background-size: cover;
-                        background-position: center;
-                        padding: 20px;
-                        height: 350px;
-                        width: 100%;
-                      "
-                    >
-                      <div id="photos_preview" class="preview-container"></div>
-                    </div>
-                    <div class="field mt-2">
-                      <input
-                        type="file"
-                        name="photo"
-                        accept="image/*"
-                        id="id_photo"
-                      />
-                    </div>
+                  <div
+                    class="field"
+                    style="
+                      background-image: url('https://upssaonline.com/profile.png');
+                      background-size: cover;
+                      background-position: center;
+                      padding: 20px;
+                      height: 350px;
+                      width: 100%;
+                    "
+                  >
+                    <div id="photos_preview" class="preview-container"></div>
+                  </div>
+                  <div class="field mt-2">
+                    <input
+                      type="file"
+                      name="photo"
+                      accept="image/*"
+                      id="id_photo"
+                    />
                   </div>
                 </div>
               </div>
