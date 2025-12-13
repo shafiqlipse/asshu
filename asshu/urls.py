@@ -21,6 +21,7 @@ urlpatterns = [
     path("articles/", include("articles.urls")),
     path("events/", include("events.urls")),
     path("agm/", include("agm.urls")),
+    path("unsa/", include("unsa.urls")),
     
     # ckeditor urls
 

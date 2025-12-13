@@ -12,6 +12,7 @@ events/migrations/*
 articles/migrations/*
 acp/migrations/*
 agm/migrations/*
+unsa/migrations/*
 # zone/migrations/*
 
 
@@ -19,6 +20,7 @@ agm/migrations/*
 photo/
 featured_images/
 member_photos/
+student_photos/
 # trainee_photos/
 # transfer_documents/
 # certificates/

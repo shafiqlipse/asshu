@@ -1,0 +1,30 @@
+{% extends "dashboard/dashboard.html" %}
+<!--static-->
+{% block title %}{{student.first_name}} {{student.last_name}}{% endblock %}
+<!--static-->
+{% load static %}
+<!--khfufufu-->
+{% block content %}
+<div class="schools-den">
+  <div class="head flex">
+    <h1>{{student.first_name}} {{student.last_name}}</h1>
+    <hr />
+  </div>
+  <div class="imagebox">
+    <img src="{{student.photo.url}}" alt="" width="200px" />
+    <div class="details">
+      <li>{{student.first_name}} {{student.last_name}}</li>
+      <li>{{student.school}}</li>
+
+      <li>{{student.region}}</li>
+
+      <li>{{student.district}}</li>
+
+      <li>{{student.designation}}</li>
+
+      <li>{{student.contact}}</li>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

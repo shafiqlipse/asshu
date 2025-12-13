@@ -1,0 +1,106 @@
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Album</title>
+  </head>
+
+  <body>
+    <style>
+      @media print {
+        @page {
+          size: A4 portrait; /* Set the size of the page to A4 in portrait orientation */
+          margin: 0; /* Remove default margin 
+          background-image: url("https://asshu.edu.ug/asshu.jpg");*/
+        }
+
+        body {
+          margin: 0; /* Remove default body margin */
+          padding: 0; /* Remove default body padding */
+        }
+
+        .students table {
+          display: grid;
+          grid-template-rows: repeat(2, 1fr); /* Two rows */
+          grid-template-columns: repeat(2, 1fr); /* Two columns */
+          gap: 10px; /* Adjust the gap between grid items */
+        }
+      }
+      .header .students table tbody tr td table tr .td {
+        padding-top: 105px;
+        padding-bottom: 40px;
+        padding-left: 50px;
+        padding-right: 40px;
+        margin: 0;
+      }
+      .header .students table tbody tr td table tr .td .inner {
+        width: 350px;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .header .students table tbody tr td table tr .td .inner img {
+        width: 160px;
+        height: 160px;
+      }
+      .header .students table tbody tr td table tr .td .inner .name {
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+    <div class="header">
+      <div class="students">
+        <table>
+          <tbody>
+            {% for student in students %}
+            <!---->
+            {% if forloop.counter0|divisibleby:2 %}
+            <!-- Start a new row for every even-numbered student -->
+            <tr>
+              {% endif %}
+              <td>
+                <table>
+                  <tr>
+                    <td class="td">
+                      <div class="inner">
+                        <span
+                          >{{ student.contact|upper}}
+                          ({{student.gender|upper}})</span
+                        >
+                        <br />
+                        {% if student.photo %}
+                        <img
+                          src="{{ student.photo.path }}"
+                          alt="{{ student.first_name }}"
+                        />
+                        {% else %}
+                        <img
+                          src="{% static 'images/profile.png' %}"
+                          alt="{{ student.last_name }}"
+                        />
+                        {% endif %}
+                        <br />
+                        <br />
+                        <span class="name"
+                          >{{ student.first_name|upper }}
+                          {{student.last_name|upper }}
+                        </span>
+                        <br />
+                        <span>{{ student.designation|upper }}</span><br />
+                        <span>{{ student.school|upper }}</span><br />
+                        <span>{{ student.district|upper }}</span><br />
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+              {% if forloop.last or forloop.counter0|add:1|divisibleby:2 %}
+              <!-- End the row for the last or odd-numbered student -->
+            </tr>
+            {% endif %} {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
